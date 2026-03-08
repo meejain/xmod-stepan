@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-stats",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-07T12:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.stepan.com/",
+    "originPage": "Stepan Company homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "statistics",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph | statistics grid",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["R&D statistics sections", "company facts/figures sections", "key metrics displays"],
+    "notSuitableFor": ["image-heavy feature sections", "document teasers"]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-07T12:24:00.000Z"
+  }
+}

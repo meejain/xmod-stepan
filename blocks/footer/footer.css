@@ -1,20 +1,344 @@
+/* stylelint-disable no-descending-specificity */
+
+/* Footer container */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: rgb(245 247 250);
+  font-size: 16px;
+  color: rgb(26 25 25);
+  position: relative;
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 30px 24px;
+  position: relative;
 }
 
 footer .footer p {
   margin: 0;
 }
 
-@media (width >= 900px) {
+footer .footer a {
+  color: rgb(0 103 172);
+  text-decoration: none;
+}
+
+footer .footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Section 1: Newsletter Signup Banner ===== */
+footer .footer > div > .section:first-child {
+  position: relative;
+  margin-top: -75px;
+  margin-bottom: 40px;
+  z-index: 1;
+}
+
+footer .footer > div > .section:first-child > .default-content-wrapper {
+  background-color: rgb(0 103 172);
+  color: #fff;
+  display: grid;
+  grid-template-columns: 165px 1fr 1fr 1fr;
+  align-items: center;
+  height: 170px;
+  padding: 0 40px 0 0;
+  overflow: visible;
+}
+
+/* Newsletter icon container - dark navy area with arrow */
+footer .footer > div > .section:first-child > .default-content-wrapper > p:first-child {
+  background-color: rgb(0 69 114);
+  width: 115px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+}
+
+footer .footer > div > .section:first-child > .default-content-wrapper > p:first-child::after {
+  content: "";
+  position: absolute;
+  left: 115px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid rgb(0 69 114);
+  border-top: 85px solid transparent;
+  border-bottom: 85px solid transparent;
+}
+
+/* Newsletter icon */
+footer .footer > div > .section:first-child .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .footer > div > .section:first-child .icon img {
+  width: 50px;
+  height: 46px;
+  filter: brightness(0) invert(1);
+}
+
+/* Newsletter heading */
+footer .footer > div > .section:first-child h2 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* Newsletter description */
+footer .footer > div > .section:first-child > .default-content-wrapper > p:nth-child(3) {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* Newsletter CTA button */
+footer .footer > div > .section:first-child .button-wrapper {
+  text-align: right;
+}
+
+footer .footer > div > .section:first-child .button {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+footer .footer > div > .section:first-child .button:hover {
+  background-color: rgb(255 255 255 / 20%);
+  text-decoration: none;
+}
+
+/* ===== Section 2: Footer Links Columns ===== */
+footer .footer > div > .section:nth-child(2) > .default-content-wrapper {
+  display: grid;
+  grid-template-columns: 354px 177px 1fr;
+  gap: 24px;
+  padding: 20px 0 40px;
+}
+
+/* Column headings */
+footer .footer > div > .section:nth-child(2) h5 {
+  color: rgb(79 79 79);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+/* All lists in footer columns */
+footer .footer > div > .section:nth-child(2) ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+/* Quick Links heading - spans col 1 */
+footer .footer > div > .section:nth-child(2) h5:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Quick Links list - single column */
+footer .footer > div > .section:nth-child(2) ul:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+footer .footer > div > .section:nth-child(2) ul:nth-of-type(1) a {
+  color: rgb(0 103 172);
+  font-size: 22px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+footer .footer > div > .section:nth-child(2) ul:nth-of-type(1) a:hover {
+  text-decoration: underline;
+}
+
+/* Connect With Us heading - col 2 */
+footer .footer > div > .section:nth-child(2) h5:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Social icons list */
+footer .footer > div > .section:nth-child(2) ul:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+footer .footer > div > .section:nth-child(2) ul:nth-of-type(2) img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+/* Member of heading - col 3 */
+footer .footer > div > .section:nth-child(2) h5:nth-of-type(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* Member logos list */
+footer .footer > div > .section:nth-child(2) ul:nth-of-type(3) {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+footer .footer > div > .section:nth-child(2) ul:nth-of-type(3) img {
+  height: 55px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ===== Section 3: Copyright Bar ===== */
+footer .footer > div > .section:last-child {
+  border-top: 1px solid rgb(192 192 193);
+  margin-top: 20px;
+}
+
+footer .footer > div > .section:last-child > .default-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Copyright text */
+footer .footer > div > .section:last-child p:first-child {
+  font-size: 18px;
+  color: rgb(26 25 25);
+  margin: 0;
+}
+
+/* Policy links */
+footer .footer > div > .section:last-child p:last-child {
+  font-size: 18px;
+  color: rgb(26 25 25);
+  margin: 0;
+}
+
+footer .footer > div > .section:last-child p:last-child a {
+  color: rgb(0 103 172);
+  font-size: 18px;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+footer .footer > div > .section:last-child p:last-child a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Mobile Styles ===== */
+@media (width < 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 30px 16px;
+  }
+
+  /* Newsletter banner - stack vertically */
+  footer .footer > div > .section:first-child {
+    margin-top: -50px;
+  }
+
+  footer .footer > div > .section:first-child > .default-content-wrapper {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 24px;
+    text-align: center;
+    gap: 12px;
+  }
+
+  footer .footer > div > .section:first-child > .default-content-wrapper > p:first-child {
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    padding: 12px 0 0;
+  }
+
+  footer .footer > div > .section:first-child > .default-content-wrapper > p:first-child::after {
+    display: none;
+  }
+
+  footer .footer > div > .section:first-child .icon {
+    justify-content: center;
+  }
+
+  footer .footer > div > .section:first-child h2 {
+    font-size: 20px;
+  }
+
+  footer .footer > div > .section:first-child > .default-content-wrapper > p:nth-child(3) {
+    font-size: 16px;
+  }
+
+  footer .footer > div > .section:first-child .button-wrapper {
+    text-align: center;
+  }
+
+  /* Footer columns - stack on mobile */
+  footer .footer > div > .section:nth-child(2) > .default-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 24px 0;
+  }
+
+  footer .footer > div > .section:nth-child(2) h5:nth-of-type(1),
+  footer .footer > div > .section:nth-child(2) ul:nth-of-type(1),
+  footer .footer > div > .section:nth-child(2) h5:nth-of-type(2),
+  footer .footer > div > .section:nth-child(2) ul:nth-of-type(2),
+  footer .footer > div > .section:nth-child(2) h5:nth-of-type(3),
+  footer .footer > div > .section:nth-child(2) ul:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  footer .footer > div > .section:nth-child(2) ul:nth-of-type(1) {
+    grid-template-columns: 1fr;
+  }
+
+  footer .footer > div > .section:nth-child(2) ul:nth-of-type(1) a {
+    font-size: 18px;
+  }
+
+  /* Copyright - stack */
+  footer .footer > div > .section:last-child > .default-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .footer > div > .section:last-child p {
+    font-size: 14px;
+  }
+
+  footer .footer > div > .section:last-child p:last-child a {
+    font-size: 14px;
   }
 }

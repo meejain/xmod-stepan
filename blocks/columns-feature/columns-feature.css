@@ -1,0 +1,171 @@
+/* Columns Feature - two-column image + text feature sections */
+main > .section.columns-feature-container {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 60px;
+}
+
+/* Override dark-blue section background - only the content panel should be blue */
+main > .section.dark-blue.columns-feature-container {
+  background-color: transparent;
+  color: var(--text-color-muted);
+}
+
+.columns-feature-container .columns-feature-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.columns-feature > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-feature > div > div:first-child img,
+.columns-feature > div > div:last-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.columns-feature h1,
+.columns-feature h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+.columns-feature p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Text column padding */
+.columns-feature > div > div:not(:has(img)) {
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Image column */
+.columns-feature > div > div:has(img) {
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* Remove paragraph margins inside image column so image fills edge-to-edge */
+.columns-feature > div > div:has(img) p {
+  margin: 0;
+  height: 100%;
+}
+
+.columns-feature a.button:any-link {
+  border-color: var(--brand-red);
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0 20px;
+  line-height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.72px;
+  border-radius: 0;
+}
+
+.columns-feature a.button:hover {
+  background-color: var(--brand-red);
+  color: #fff;
+}
+
+/* Dark-blue content panel text overrides (scoped to the blue panel only) */
+.dark-blue .columns-feature > div > div:last-child h1,
+.dark-blue .columns-feature > div > div:last-child h2 {
+  color: #fff;
+}
+
+.dark-blue .columns-feature > div > div:last-child p {
+  color: #fff;
+}
+
+.dark-blue .columns-feature > div > div:last-child a.button:any-link {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+}
+
+.dark-blue .columns-feature > div > div:last-child a.button:hover {
+  background-color: #fff;
+  color: var(--brand-blue);
+}
+
+/* Sustainability section - light grey text column background */
+.columns-feature:not(.dark-blue .columns-feature) > div > div:not(:has(img)) {
+  background-color: #f5f7fa;
+}
+
+@media (width >= 900px) {
+  /* Desktop: 7-column CSS grid with overlapping columns */
+  .columns-feature > div {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 510px;
+    align-items: center;
+  }
+
+  /* Image column: fills the fixed grid row */
+  .columns-feature > div > div:has(img) {
+    height: 100%;
+    min-height: unset;
+  }
+
+  /* Text column: 90% height, vertically centered by grid alignment */
+  .columns-feature > div > div:not(:has(img)) {
+    box-sizing: border-box;
+    height: 90%;
+    overflow: auto;
+    padding: 50px;
+  }
+
+  /* Innovation (dark-blue): Image left (cols 1-4), text right (cols 4-7) */
+  .dark-blue .columns-feature > div > div:first-child {
+    grid-column: 1 / 5;
+    grid-row: 1;
+  }
+
+  .dark-blue .columns-feature > div > div:last-child {
+    grid-column: 4 / 8;
+    grid-row: 1;
+    background-color: var(--brand-blue);
+  }
+
+  /* Sustainability text column overrides */
+  .columns-feature:not(.dark-blue .columns-feature) > div > div:not(:has(img)) {
+    padding: 30px 40px;
+  }
+
+  /* Sustainability (not dark-blue): Text left (cols 1-4), image right (cols 4-7) */
+  .columns-feature:not(.dark-blue .columns-feature) > div > div:first-child {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    z-index: 1;
+  }
+
+  .columns-feature:not(.dark-blue .columns-feature) > div > div:last-child {
+    grid-column: 4 / 8;
+    grid-row: 1;
+  }
+
+  .columns-feature h1,
+  .columns-feature h2 {
+    font-size: 36px;
+  }
+
+  .columns-feature p {
+    font-size: 26px;
+    line-height: 1.5;
+  }
+}

@@ -95,21 +95,52 @@ function decorateButtons(main) {
     // require authored formatting for buttonization
     const strong = a.closest('strong');
     const em = a.closest('em');
-    if (!strong && !em) return;
 
-    p.className = 'button-wrapper';
-    a.className = 'button';
-    if (strong && em) { // high-impact call-to-action
-      a.classList.add('accent');
-      const outer = strong.contains(em) ? strong : em;
-      outer.replaceWith(a);
-    } else if (strong) {
-      a.classList.add('primary');
-      strong.replaceWith(a);
-    } else {
-      a.classList.add('secondary');
-      em.replaceWith(a);
+    if (strong || em) {
+      p.className = 'button-wrapper';
+      a.className = 'button';
+      if (strong && em) { // high-impact call-to-action
+        a.classList.add('accent');
+        const outer = strong.contains(em) ? strong : em;
+        outer.replaceWith(a);
+      } else if (strong) {
+        a.classList.add('primary');
+        strong.replaceWith(a);
+      } else {
+        a.classList.add('secondary');
+        em.replaceWith(a);
+      }
+      return;
     }
+
+    // auto-detect uppercase CTA links as secondary buttons
+    if (text === text.toUpperCase() && text.length > 3) {
+      p.className = 'button-wrapper';
+      a.className = 'button secondary';
+    }
+  });
+
+  // handle paragraphs with multiple CTA links (e.g. "HOW TO BUY" + "CONTACT US")
+  main.querySelectorAll('p').forEach((p) => {
+    const links = [...p.querySelectorAll(':scope > a[href]')];
+    if (links.length <= 1) return;
+
+    const allCTA = links.every((a) => {
+      const t = a.textContent.trim();
+      return t === t.toUpperCase() && t.length > 3 && !a.querySelector('img');
+    });
+
+    if (!allCTA) return;
+
+    const frag = document.createDocumentFragment();
+    links.forEach((a) => {
+      const wrapper = document.createElement('p');
+      wrapper.className = 'button-wrapper';
+      a.className = 'button secondary';
+      wrapper.append(a);
+      frag.append(wrapper);
+    });
+    p.replaceWith(frag);
   });
 }
 

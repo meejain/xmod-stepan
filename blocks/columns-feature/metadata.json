@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-feature",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-07T12:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.stepan.com/",
+    "originPage": "Stepan Company homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "feature-highlight",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image | heading + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["feature highlight sections with image and text", "innovation/sustainability sections", "image-text split layouts with colored backgrounds"],
+    "notSuitableFor": ["statistics sections", "card grids", "document teaser layouts"]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-07T12:24:00.000Z"
+  }
+}

@@ -1,0 +1,111 @@
+/* Hero Homepage - full-width background image hero */
+.hero-homepage-container {
+  max-width: unset;
+}
+
+.hero-homepage-container .hero-homepage-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-homepage {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* Image row - positioned as background */
+.hero-homepage > .hero-homepage-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-homepage > .hero-homepage-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content row - overlaid on image */
+.hero-homepage > .hero-homepage-content {
+  position: relative;
+  z-index: 1;
+  padding: 160px 40px 40px;
+}
+
+.hero-homepage > .hero-homepage-content > div {
+  max-width: 600px;
+}
+
+.hero-homepage h1 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+.hero-homepage h1::after {
+  content: '';
+  display: block;
+  width: 110px;
+  height: 5px;
+  background-color: var(--brand-red);
+  margin-top: 8px;
+}
+
+.hero-homepage p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.hero-homepage .button-wrapper {
+  margin: 0;
+}
+
+.hero-homepage a.button:any-link {
+  background-color: var(--brand-red);
+  border-color: var(--brand-red);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 20px;
+  line-height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.72px;
+  border-radius: 0;
+  border-width: 0;
+}
+
+.hero-homepage a.button:hover {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+}
+
+/* No-image fallback */
+.hero-homepage.no-image {
+  background-color: var(--brand-blue);
+  min-height: 300px;
+}
+
+@media (width >= 900px) {
+  .hero-homepage {
+    min-height: 600px;
+  }
+
+  .hero-homepage > .hero-homepage-content {
+    padding: 160px 160px 40px;
+  }
+
+  .hero-homepage h1 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+}

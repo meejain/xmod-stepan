@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://www.stepan.com/",
+  "path": "index",
+  "timestamp": "2026-03-07T13:27:18.104Z",
+  "title": "Stepan Specialty and Intermediate Chemical Solutions and Manufacturing",
+  "template": "homepage",
+  "blocks": [
+    "hero-homepage",
+    "columns-teaser",
+    "columns-teaser",
+    "columns-feature",
+    "columns-feature",
+    "columns-stats",
+    "cards-news"
+  ]
+}

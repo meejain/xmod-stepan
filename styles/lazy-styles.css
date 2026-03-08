@@ -1,1 +1,95 @@
 /* add global styles that can be loaded post LCP here */
+
+/* Dark-blue section - newsletter and feature sections */
+main .section.dark-blue .button-wrapper {
+  margin: 8px 0;
+}
+
+/* Section spacing refinements */
+main > .section {
+  margin: 0;
+  padding: 60px 0;
+}
+
+main > .section:first-of-type {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* News section heading */
+main > .section h2 {
+  margin-top: 0;
+}
+
+/* Newsletter section - horizontal layout on desktop */
+main > .section.dark-blue:last-of-type > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+main > .section.dark-blue:last-of-type p {
+  margin: 0;
+}
+
+main > .section.dark-blue:last-of-type > div > p:first-child {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+main > .section.dark-blue:last-of-type > div > p:nth-child(2) {
+  font-size: 22px;
+}
+
+main > .section.dark-blue:last-of-type .button-wrapper {
+  margin: 8px 0 0;
+}
+
+main > .section.dark-blue:last-of-type a.button:any-link {
+  border-width: 2px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 30px;
+}
+
+/* About section - rounded, larger buttons with white bg */
+main > .section.columns-teaser-container:has(~ .section.columns-teaser-container) a.button:any-link {
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px 15px;
+  background-color: #fff;
+  color: #343a40;
+}
+
+main > .section.columns-teaser-container:has(~ .section.columns-teaser-container) a.button:hover {
+  background-color: var(--brand-red);
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  main > .section.dark-blue:last-of-type > div {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 24px;
+  }
+
+  main > .section.dark-blue:last-of-type > div > p:first-child {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  main > .section.dark-blue:last-of-type > div > p:nth-child(2) {
+    font-size: 18px;
+  }
+
+  main > .section.dark-blue:last-of-type a.button:any-link {
+    font-size: 18px;
+    white-space: nowrap;
+  }
+}
