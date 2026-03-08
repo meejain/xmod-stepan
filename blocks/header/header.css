@@ -18,6 +18,7 @@ header .nav-wrapper {
   background-color: transparent;
 }
 
+/* Original stepan.com: .pageheader .container { max-width: 92% } */
 header nav {
   font-family: var(--body-font-family);
   color: #fff;
@@ -295,6 +296,7 @@ header nav p {
   .nav-sections > ul > li {
     position: relative;
     display: flex;
+    flex: 0 0 auto;
   }
 
   .nav-sections .default-content-wrapper > ul > li > a,
@@ -316,21 +318,33 @@ header nav p {
     color: #fff;
   }
 
-  /* Dropdown submenu */
+  /* Dropdown submenu - from original stepan.com .subnav_list:
+     left:50%; transform:translateX(-50%); top:100%; width:100%; */
   .nav-sections .default-content-wrapper > ul > li > ul,
   .nav-sections > ul > li > ul {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    box-sizing: border-box;
     background: #fff;
     border-top: 5px solid var(--brand-red, #e8482e);
-    box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 24%);
     list-style: none;
     padding: 16px 0;
     margin: 0;
-    min-width: 220px;
-    z-index: 20;
+    z-index: 999;
+  }
+
+  /* Last nav item: align dropdown right so it doesn't overflow (original: left:auto; right:0; transform:translateX(0)) */
+  .nav-sections .default-content-wrapper > ul > li:last-child > ul,
+  .nav-sections > ul > li:last-child > ul {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
   }
 
   .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul,
@@ -338,6 +352,7 @@ header nav p {
     display: block;
   }
 
+  /* Original .subnav_list-item a: padding 1pc 0 1pc 10%; font-size 1pc; color #231f20 */
   .nav-sections .default-content-wrapper > ul > li > ul > li > a,
   .nav-sections > ul > li > ul > li > a {
     display: block;
@@ -345,7 +360,6 @@ header nav p {
     font-size: 16px;
     font-weight: 400;
     color: rgb(35 31 32) !important;
-    white-space: nowrap;
   }
 
   .nav-sections .default-content-wrapper > ul > li > ul > li > a:hover,
@@ -598,15 +612,25 @@ header nav[aria-expanded='true'] .nav-hamburger {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    box-sizing: border-box;
     background: #fff;
     border-top: 5px solid var(--brand-red, #e8482e);
-    box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 24%);
     list-style: none;
     padding: 16px 0;
     margin: 0;
-    min-width: 220px;
-    z-index: 20;
+    z-index: 999;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections .default-content-wrapper > ul > li:last-child > ul,
+  header nav[aria-expanded='true'] .nav-sections > ul > li:last-child > ul {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
   }
 
   header nav[aria-expanded='true'] .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul,
@@ -621,7 +645,6 @@ header nav[aria-expanded='true'] .nav-hamburger {
     font-size: 16px;
     font-weight: 400;
     color: rgb(35 31 32) !important;
-    white-space: nowrap;
   }
 
   header nav[aria-expanded='true'] .nav-sections .default-content-wrapper > ul > li > ul > li > a:hover,

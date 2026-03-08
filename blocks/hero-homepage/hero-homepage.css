@@ -31,11 +31,14 @@
   display: block;
 }
 
-/* Content row - overlaid on image */
+/* Content row - overlaid on image, constrained to match site content width */
 .hero-homepage > .hero-homepage-content {
   position: relative;
   z-index: 1;
-  padding: 160px 40px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 160px 32px 40px;
+  box-sizing: border-box;
 }
 
 .hero-homepage > .hero-homepage-content > div {
@@ -101,7 +104,7 @@
   }
 
   .hero-homepage > .hero-homepage-content {
-    padding: 160px 160px 40px;
+    padding: 160px 48px 40px;
   }
 
   .hero-homepage h1 {
