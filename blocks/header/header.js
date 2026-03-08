@@ -188,6 +188,16 @@ export default async function decorate(block) {
     if (brandSection) mainNavRow.append(brandSection);
 
     if (sectionsSection) {
+      // Unwrap <p> elements from nav list items
+      // EDS wraps link text in <p> tags, producing li > p > a instead of li > a
+      // which breaks CSS selectors and JS queries that expect direct children
+      sectionsSection.querySelectorAll('li > p').forEach((p) => {
+        while (p.firstChild) {
+          p.parentElement.insertBefore(p.firstChild, p);
+        }
+        p.remove();
+      });
+
       // Setup dropdown support for nav items
       const navList = sectionsSection.querySelector(':scope ul');
       if (navList) {
