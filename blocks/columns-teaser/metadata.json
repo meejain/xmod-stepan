@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-teaser",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-07T12:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.stepan.com/",
+    "originPage": "Stepan Company homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "teaser",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + CTA | images + titles",
+    "buttonCount": 1,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": ["about sections with text and teaser cards", "text + CTA alongside image/document teasers", "sales rep contact sections"],
+    "notSuitableFor": ["full-width image banners", "statistics layouts"]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-07T12:24:00.000Z"
+  }
+}

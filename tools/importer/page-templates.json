@@ -1,0 +1,132 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.stepan.com/"
+      ],
+      "description": "Stepan Company homepage with hero, product categories, news, and company information",
+      "blocks": [
+        {
+          "name": "hero-homepage",
+          "instances": [
+            ".homepagehero .page-hero"
+          ]
+        },
+        {
+          "name": "columns-teaser",
+          "instances": [
+            ".dualteaser",
+            ".columnrow.vertical-align:has(.subtitle)"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            ".responsivegrid.our-membership.our-membership-image-left",
+            ".responsivegrid.our-membership.our-membership-image-right"
+          ]
+        },
+        {
+          "name": "columns-stats",
+          "instances": [
+            ".columnrow.vertical-align:has(.statisticlist)"
+          ]
+        },
+        {
+          "name": "cards-news",
+          "instances": [
+            ".carousel.news"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1-hero",
+          "name": "Hero Banner",
+          "selector": ".homepagehero.pagehero",
+          "style": null,
+          "blocks": [
+            "hero-homepage"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2-about",
+          "name": "About / Dual Teaser",
+          "selector": ".contentbreak.pagesection.no-background > .content-break > .container > .aem-Grid > .contentbreak:first-child",
+          "style": null,
+          "blocks": [
+            "columns-teaser"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3-innovation",
+          "name": "Innovation",
+          "selector": ".responsivegrid.our-membership.our-membership-image-left",
+          "style": "dark-blue",
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4-sustainability",
+          "name": "Sustainability",
+          "selector": ".responsivegrid.our-membership.our-membership-image-right",
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5-stats",
+          "name": "R&D Statistics",
+          "selector": ".columnrow.vertical-align:has(.statisticlist)",
+          "style": null,
+          "blocks": [
+            "columns-stats"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6-news",
+          "name": "News",
+          "selector": ".contentbreak.pagesection:has(.carousel.news)",
+          "style": null,
+          "blocks": [
+            "cards-news"
+          ],
+          "defaultContent": [
+            "h2#heading-1957008094",
+            ".cmp-carousel__action--linkButton"
+          ]
+        },
+        {
+          "id": "section-7-sales-rep",
+          "name": "Find a Sales Representative",
+          "selector": ".columnrow.vertical-align:has(.subtitle)",
+          "style": null,
+          "blocks": [
+            "columns-teaser"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8-newsletter",
+          "name": "Newsletter Signup",
+          "selector": ".containerSubscribe",
+          "style": "dark-blue",
+          "blocks": [],
+          "defaultContent": [
+            ".titleSubscribe",
+            ".labelSubscribe",
+            ".subscribeNow"
+          ]
+        }
+      ]
+    }
+  ]
+}

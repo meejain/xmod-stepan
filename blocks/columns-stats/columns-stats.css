@@ -1,0 +1,103 @@
+/* Columns Stats - heading + stats grid */
+.columns-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px 0;
+}
+
+.columns-stats > div > div {
+  flex: 1;
+}
+
+/* Left column - heading and description */
+.columns-stats > div > div:first-child h2 {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+/* Red underline bar under heading */
+.columns-stats .columns-stats-info h2::after {
+  content: '';
+  display: block;
+  width: 110px;
+  height: 5px;
+  background-color: var(--brand-red);
+  margin-top: 20px;
+}
+
+.columns-stats > div > div:first-child p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color-muted);
+}
+
+/* Right column - stats grid */
+.columns-stats > div > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px 22px;
+}
+
+.columns-stats > div > div:last-child p,
+.columns-stats > div > div:last-child a {
+  text-align: center;
+  text-decoration: none;
+  color: var(--brand-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: none;
+  border-bottom: 5px solid var(--brand-red);
+  border-radius: 0;
+  box-shadow: 0 0 12px rgb(0 0 0 / 16%);
+  transition: box-shadow 0.2s;
+  margin: 0;
+  aspect-ratio: 1;
+  background-color: #fff;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.columns-stats > div > div:last-child a:hover {
+  box-shadow: 0 2px 16px rgb(0 0 0 / 22%);
+  text-decoration: none;
+}
+
+/* SVG stat icons */
+.columns-stats .columns-stats-icon {
+  width: 58px;
+  height: 55px;
+  margin-bottom: 12px;
+}
+
+.columns-stats > div > div:last-child strong {
+  display: block;
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--brand-dark);
+  font-family: Helvetica, sans-serif;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+@media (width >= 900px) {
+  .columns-stats > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .columns-stats > div > div:first-child h2 {
+    font-size: 48px;
+  }
+
+  .columns-stats > div > div:last-child strong {
+    font-size: 64px;
+  }
+}

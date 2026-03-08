@@ -1,0 +1,31 @@
+{
+  "variantName": "hero-homepage",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-07T12:24:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.stepan.com/",
+    "originPage": "Stepan Company homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background-image + heading + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["homepage banners", "landing page heroes with background images"],
+    "notSuitableFor": ["text-only heroes", "product detail pages"]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-07T12:24:00.000Z"
+  }
+}
