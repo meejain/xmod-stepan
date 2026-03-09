@@ -12,7 +12,7 @@ main > .section.dark-blue.columns-feature-container {
 }
 
 .columns-feature-container .columns-feature-wrapper {
-  max-width: 92%;
+  max-width: 85%;
   margin: auto;
   padding: 0 15px;
 }
