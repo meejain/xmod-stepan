@@ -125,7 +125,9 @@ footer .footer > div > .section:first-child .button:hover {
 }
 
 /* ===== Section 2: Footer Links Columns ===== */
-footer .footer > div > .section:nth-child(2) {
+
+/* The JS groups flat h5+ul pairs into column divs inside the wrapper */
+footer .footer > div > .section:nth-child(2) > div {
   display: grid;
   grid-template-columns: 354px 177px 1fr;
   gap: 24px;
@@ -137,59 +139,63 @@ footer .footer > div > .section:nth-child(2) h5 {
   color: rgb(79 79 79);
   font-size: 18px;
   font-weight: 700;
+  font-family: Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   margin: 0 0 8px;
+  line-height: 22.5px;
 }
 
 /* All lists in footer columns */
 footer .footer > div > .section:nth-child(2) ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px;
+  margin: 0;
 }
 
-/* Quick Links list */
-footer .footer > div > .section:nth-child(2) > div:nth-child(1) ul {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Quick Links list - 2-column grid matching original exactly */
+footer .footer > div > .section:nth-child(2) > div > div:nth-child(1) ul {
+  display: grid;
+  grid-template-columns: 162px 162px;
+  gap: 30px;
 }
 
-footer .footer > div > .section:nth-child(2) > div:nth-child(1) ul a {
+footer .footer > div > .section:nth-child(2) > div > div:nth-child(1) ul a {
   color: rgb(0 103 172);
   font-size: 22px;
   font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
+  line-height: 33px;
 }
 
-footer .footer > div > .section:nth-child(2) > div:nth-child(1) ul a:hover {
+footer .footer > div > .section:nth-child(2) > div > div:nth-child(1) ul a:hover {
   text-decoration: underline;
 }
 
-/* Social icons list */
-footer .footer > div > .section:nth-child(2) > div:nth-child(2) ul {
+/* Social icons list - Connect With Us */
+footer .footer > div > .section:nth-child(2) > div > div:nth-child(2) ul {
   display: flex;
   gap: 15px;
   align-items: flex-start;
 }
 
-footer .footer > div > .section:nth-child(2) > div:nth-child(2) ul img {
+footer .footer > div > .section:nth-child(2) > div > div:nth-child(2) ul img {
   width: 32px;
   height: 32px;
   display: block;
 }
 
 /* Member logos list */
-footer .footer > div > .section:nth-child(2) > div:nth-child(3) ul {
+footer .footer > div > .section:nth-child(2) > div > div:nth-child(3) ul {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-wrap: nowrap;
+  gap: 30px;
   align-items: center;
 }
 
-footer .footer > div > .section:nth-child(2) > div:nth-child(3) ul img {
+footer .footer > div > .section:nth-child(2) > div > div:nth-child(3) ul img {
   height: 55px;
-  width: auto;
+  width: 55px;
   display: block;
   object-fit: contain;
 }
@@ -289,12 +295,16 @@ footer .footer > div > .section:last-child ul a:hover {
   }
 
   /* Footer columns - stack on mobile */
-  footer .footer > div > .section:nth-child(2) {
+  footer .footer > div > .section:nth-child(2) > div {
     grid-template-columns: 1fr;
     gap: 24px 0;
   }
 
-  footer .footer > div > .section:nth-child(2) > div:nth-child(1) ul a {
+  footer .footer > div > .section:nth-child(2) > div > div:nth-child(1) ul {
+    grid-template-columns: 1fr;
+  }
+
+  footer .footer > div > .section:nth-child(2) > div > div:nth-child(1) ul a {
     font-size: 18px;
   }
 
