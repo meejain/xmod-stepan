@@ -258,7 +258,7 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 92%;
+  max-width: 85%;
   margin: auto;
   padding: 0 15px;
 }
