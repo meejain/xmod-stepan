@@ -12,8 +12,9 @@ main > .section.dark-blue.columns-feature-container {
 }
 
 .columns-feature-container .columns-feature-wrapper {
-  max-width: unset;
-  padding: 0;
+  max-width: 92%;
+  margin: auto;
+  padding: 0 15px;
 }
 
 .columns-feature > div {
