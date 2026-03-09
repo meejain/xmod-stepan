@@ -126,10 +126,14 @@ footer .footer > div > .section:first-child .button:hover {
 
 /* ===== Section 2: Footer Links Columns ===== */
 footer .footer > div > .section:nth-child(2) {
+  padding: 20px 0 40px;
+}
+
+/* Grid is on the wrapper so the column divs become grid items */
+footer .footer .footer-links-grid {
   display: grid;
   grid-template-columns: 354px 177px 1fr;
   gap: 24px;
-  padding: 20px 0 40px;
 }
 
 /* Column headings */
@@ -142,52 +146,52 @@ footer .footer > div > .section:nth-child(2) h5 {
 }
 
 /* All lists in footer columns */
-footer .footer > div > .section:nth-child(2) ul {
+footer .footer .footer-links-grid ul {
   list-style: none;
   padding: 0;
   margin: 0 0 20px;
 }
 
-/* Quick Links list */
-footer .footer > div > .section:nth-child(2) > div:nth-child(1) ul {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Column 1: Quick Links list - 2 columns like original */
+footer .footer .footer-links-grid > div:nth-child(1) ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
 }
 
-footer .footer > div > .section:nth-child(2) > div:nth-child(1) ul a {
+footer .footer .footer-links-grid > div:nth-child(1) ul a {
   color: rgb(0 103 172);
   font-size: 22px;
   font-weight: 400;
   text-decoration: none;
 }
 
-footer .footer > div > .section:nth-child(2) > div:nth-child(1) ul a:hover {
+footer .footer .footer-links-grid > div:nth-child(1) ul a:hover {
   text-decoration: underline;
 }
 
-/* Social icons list */
-footer .footer > div > .section:nth-child(2) > div:nth-child(2) ul {
+/* Column 2: Social icons list */
+footer .footer .footer-links-grid > div:nth-child(2) ul {
   display: flex;
   gap: 15px;
   align-items: flex-start;
 }
 
-footer .footer > div > .section:nth-child(2) > div:nth-child(2) ul img {
+footer .footer .footer-links-grid > div:nth-child(2) ul img {
   width: 32px;
   height: 32px;
   display: block;
 }
 
-/* Member logos list */
-footer .footer > div > .section:nth-child(2) > div:nth-child(3) ul {
+/* Column 3: Member logos list */
+footer .footer .footer-links-grid > div:nth-child(3) ul {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
 }
 
-footer .footer > div > .section:nth-child(2) > div:nth-child(3) ul img {
+footer .footer .footer-links-grid > div:nth-child(3) ul img {
   height: 55px;
   width: auto;
   display: block;
@@ -289,12 +293,16 @@ footer .footer > div > .section:last-child ul a:hover {
   }
 
   /* Footer columns - stack on mobile */
-  footer .footer > div > .section:nth-child(2) {
+  footer .footer .footer-links-grid {
     grid-template-columns: 1fr;
     gap: 24px 0;
   }
 
-  footer .footer > div > .section:nth-child(2) > div:nth-child(1) ul a {
+  footer .footer .footer-links-grid > div:nth-child(1) ul {
+    grid-template-columns: 1fr;
+  }
+
+  footer .footer .footer-links-grid > div:nth-child(1) ul a {
     font-size: 18px;
   }
 
