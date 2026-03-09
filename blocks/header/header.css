@@ -296,14 +296,13 @@ header nav p {
   .nav-sections > ul > li {
     position: relative;
     display: flex;
-    flex: 0 0 auto;
   }
 
   .nav-sections .default-content-wrapper > ul > li > a,
   .nav-sections > ul > li > a {
     display: flex;
     align-items: center;
-    padding: 34px 36px 27px 21px;
+    padding: 34px 24px 27px 14px;
     font-size: 20px;
     font-weight: 400;
     color: #fff;
@@ -545,6 +544,10 @@ header nav[aria-expanded='true'] .nav-hamburger {
     min-height: 0;
     overflow: visible;
     background: transparent;
+    max-width: 92%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     padding: 0 15px;
   }
 
@@ -592,7 +595,7 @@ header nav[aria-expanded='true'] .nav-hamburger {
   header nav[aria-expanded='true'] .nav-sections > ul > li > a {
     display: flex;
     align-items: center;
-    padding: 34px 36px 27px 21px;
+    padding: 34px 24px 27px 14px;
     font-size: 20px;
     font-weight: 400;
     color: #fff;

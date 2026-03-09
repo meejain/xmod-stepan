@@ -1,5 +1,12 @@
 /* Cards News - news carousel */
 
+/* Blue background for News section - starts below heading, covers cards + nav */
+main > .section.cards-news-container {
+  background: linear-gradient(to bottom, transparent 40%, var(--brand-blue) 40%);
+  margin: 0;
+  padding: 40px 0;
+}
+
 /* Red underline under News heading (section default content) */
 .cards-news-container .default-content-wrapper h2::after {
   content: '';
@@ -168,7 +175,7 @@
   display: block;
   width: 22px;
   height: 22px;
-  border: 2px solid var(--text-color);
+  border: 2px solid #fff;
   border-radius: 7px;
   position: relative;
   transform: scale(1.5);
@@ -181,8 +188,8 @@
   position: absolute;
   width: 6px;
   height: 6px;
-  border-bottom: 1px solid;
-  border-left: 1px solid;
+  border-bottom: 1px solid #fff;
+  border-left: 1px solid #fff;
   transform: rotate(45deg);
   left: 7px;
   top: 6px;
@@ -195,8 +202,8 @@
   position: absolute;
   width: 6px;
   height: 6px;
-  border-bottom: 1px solid;
-  border-right: 1px solid;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
   transform: rotate(-45deg);
   right: 7px;
   top: 6px;
@@ -206,10 +213,10 @@
 .cards-news .cards-news-see-all {
   margin-left: auto;
   text-transform: uppercase;
-  border: 2px solid var(--text-color);
+  border: 2px solid #fff;
   padding: 8px 16px;
   border-radius: 8px;
-  color: var(--text-color);
+  color: #fff;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.36px;
@@ -218,8 +225,8 @@
 }
 
 .cards-news .cards-news-see-all:hover {
-  background-color: var(--text-color);
-  color: #fff;
+  background-color: #fff;
+  color: var(--brand-blue);
   text-decoration: none;
 }
 
