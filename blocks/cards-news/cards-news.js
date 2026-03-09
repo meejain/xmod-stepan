@@ -59,20 +59,26 @@ export default function decorate(block) {
     nextBtn.disabled = ul.scrollLeft >= ul.scrollWidth - ul.offsetWidth - 1;
   };
 
-  prevBtn.addEventListener('click', () => {
-    const pageWidth = ul.offsetWidth;
-    const target = Math.max(0, ul.scrollLeft - pageWidth);
-    ul.scrollTo({ left: target, behavior: 'smooth' });
-    setTimeout(updateButtons, 400);
-  });
-
-  nextBtn.addEventListener('click', () => {
+  const scrollCarousel = (direction) => {
     const pageWidth = ul.offsetWidth;
     const maxScroll = ul.scrollWidth - ul.offsetWidth;
-    const target = Math.min(maxScroll, ul.scrollLeft + pageWidth);
+    const target = direction === 'next'
+      ? Math.min(maxScroll, ul.scrollLeft + pageWidth)
+      : Math.max(0, ul.scrollLeft - pageWidth);
+
+    // Temporarily disable scroll-snap to prevent it from fighting scrollTo
+    ul.style.scrollSnapType = 'none';
     ul.scrollTo({ left: target, behavior: 'smooth' });
-    setTimeout(updateButtons, 400);
-  });
+
+    // Re-enable scroll-snap after scroll completes
+    setTimeout(() => {
+      ul.style.scrollSnapType = '';
+      updateButtons();
+    }, 500);
+  };
+
+  prevBtn.addEventListener('click', () => scrollCarousel('prev'));
+  nextBtn.addEventListener('click', () => scrollCarousel('next'));
 
   ul.addEventListener('scroll', () => {
     updateButtons();
